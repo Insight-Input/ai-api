@@ -54,7 +54,7 @@ for value in data['items']:
 new_data = {
     'collection' : {
         'version': '1.0',
-        'href': 'http://api.insightinput.co/search?q=casablanca&media_type=image&page=1',
+        'href': 'http://api.insightinput.co/search?q='+search,
         'data' : items_data,
         'metadata': {
             'total_hits': i
@@ -64,3 +64,6 @@ new_data = {
 print('_______________________')
 print(new_data)
 os.system('rm -rf '+file+' '+dir)
+
+with open('data.json', 'w') as f:
+    json.dump(new_data, f)
